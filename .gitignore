@@ -1,0 +1,25 @@
+# dependencies
+/node_modules
+
+# next.js
+/.next/
+/out/
+
+# production
+/build
+
+# misc
+.DS_Store
+*.pem
+
+# debug
+npm-debug.log*
+
+# local env files
+.env*.local
+
+# figma reference screenshots (dev artifacts)
+figma_*.png
+
+# claude code local (per-user) settings
+.claude/settings.local.json

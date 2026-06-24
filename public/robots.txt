@@ -1,0 +1,8 @@
+# Boneo – Matcha mäklare
+# Allow all crawlers, including AI answer-engine bots (GPTBot, OAI-SearchBot,
+# PerplexityBot, ClaudeBot, Google-Extended). We *want* to be cited for
+# "bästa mäklaren i …" queries.
+User-agent: *
+Allow: /
+
+Sitemap: https://www.boneo.se/sitemap.xml
