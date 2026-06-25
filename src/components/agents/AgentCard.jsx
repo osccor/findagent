@@ -184,7 +184,6 @@ export default function AgentCard({ agent, activeSort }) {
           </SubLine>
           <MetaRow>
             <AgencyLogo agency={agent.agency} />
-            <StarRating value={agent.rating} count={agent.reviewCount} />
             <ScoreChip title="Boneo-betyg 0–100, sammanvägt av sålda, pris, tid och betyg">
               Boneo-betyg <b>{Math.round(agent.boneoScore)}</b>
             </ScoreChip>
