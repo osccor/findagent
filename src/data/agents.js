@@ -75,6 +75,7 @@ export function buildAgentMetrics(agent, place) {
   const r2 = rng();
   const r3 = rng();
   const r4 = rng();
+  const r5 = rng();
 
   const soldCount = Math.max(3, Math.round(3 + agent.skill * 16 + r1 * 13));
   const pricePerSqm = Math.round(market.medianPricePerSqm * (0.95 + (agent.skill - 1) * 0.06 + r2 * 0.06));
@@ -82,6 +83,8 @@ export function buildAgentMetrics(agent, place) {
   const finalToAsk = +(market.avgFinalToAsk + (agent.skill - 1) * 0.025 + r4 * 0.01).toFixed(3);
   const recencyDays = Math.round(3 + r2 * 55); // days since last closed sale
   const typeMatchShare = +(0.55 + agent.skill * 0.25 + r3 * 0.15).toFixed(2);
+  // Popular agents and good marketers draw more viewers per showing (range ~4–14).
+  const avgViewings = Math.max(4, Math.round(4 + agent.skill * 5 + r5 * 4));
 
   return {
     agentId: agent.id,
@@ -95,6 +98,7 @@ export function buildAgentMetrics(agent, place) {
     pricePerSqm,
     daysToSell,
     finalToAsk,
+    avgViewings,
     recencyDays,
     typeMatchShare: Math.min(0.99, typeMatchShare),
   };

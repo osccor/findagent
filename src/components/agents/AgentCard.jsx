@@ -196,6 +196,7 @@ export default function AgentCard({ agent, activeSort }) {
         <KpiTile value={nf(agent.soldCount)} unit="st" label="Antal sålda" active={activeSort === 'sold'} />
         <KpiTile value={tkr(agent.pricePerSqm)} unit="tkr" label="Snittpris kvm" active={activeSort === 'price'} />
         <KpiTile value={nf(agent.daysToSell)} unit="dagar" label="Försäljningstid" active={activeSort === 'time'} />
+        <KpiTile value={nf(agent.avgViewings)} unit="pers" label="Snitt deltagare/visning" active={activeSort === 'viewings'} />
       </KpiRow>
 
       <Footer>

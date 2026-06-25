@@ -137,6 +137,7 @@ export const SORT_MODES = [
   { key: 'sold', label: 'Flest sålda' },
   { key: 'price', label: 'Snittpris kvm' },
   { key: 'time', label: 'Försäljningstid' },
+  { key: 'viewings', label: 'Snitt deltagare/visning' },
 ];
 
 // Re-orders an already-ranked list for the active filter tab. Pure + stable —
@@ -152,6 +153,9 @@ export function sortAgents(agents, mode) {
       break;
     case 'time':
       copy.sort((a, b) => a.daysToSell - b.daysToSell || b.boneoScore - a.boneoScore);
+      break;
+    case 'viewings':
+      copy.sort((a, b) => b.avgViewings - a.avgViewings || b.boneoScore - a.boneoScore);
       break;
     case 'boneo':
     default:
